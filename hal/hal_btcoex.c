@@ -3427,7 +3427,7 @@ hal_btcoex_AntIsolationConfig_ParaFile(
 {
 	HAL_DATA_TYPE		*pHalData = GET_HAL_DATA(Adapter);
 	int	rlen = 0, rtStatus = _FAIL;
-	//char	file_path[1024];
+	//char	phy_config_path[1024];
 
 	//if(!(Adapter->registrypriv.load_phy_file & LOAD_RF_TXPWR_LMT_PARA_FILE))
 	//	return rtStatus;
@@ -3435,11 +3435,11 @@ hal_btcoex_AntIsolationConfig_ParaFile(
 	_rtw_memset(pHalData->para_file_buf, 0, MAX_PARA_FILE_BUF_LEN);
 
 
-	rtw_merge_string(file_path, PATH_LENGTH_MAX, rtw_phy_file_path, pFileName);
+	rtw_merge_string(phy_config_path, PATH_LENGTH_MAX, rtw_phy_file_path, pFileName);
 
-	if (rtw_is_file_readable(file_path) == _TRUE)
+	if (rtw_is_file_readable(phy_config_path) == _TRUE)
 	{
-		rlen = rtw_retrive_from_file(file_path, pHalData->para_file_buf, MAX_PARA_FILE_BUF_LEN);
+		rlen = rtw_retrive_from_file(phy_config_path, pHalData->para_file_buf, MAX_PARA_FILE_BUF_LEN);
 		if (rlen > 0)
 		{
 			rtStatus = _SUCCESS;
