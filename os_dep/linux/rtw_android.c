@@ -38,6 +38,13 @@
 #include <linux/irq.h>
 #endif
 
+#include <linux/string.h>
+// Fancy stack overflow answer
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(4, 0, 0))
+#define strnicmp strncasecmp
+#endif
+
+
 extern void macstr2num(u8 *dst, u8 *src);
 
 const char *android_wifi_cmd_str[ANDROID_WIFI_CMD_MAX] = {
