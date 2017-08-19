@@ -17,3 +17,7 @@ sudo make install
 
 ## License
 The driver license appears to be GPLv2
+
+# Similar repositories
+The repository [diederikdehaas/rtl8812AU](https://github.com/diederikdehaas/rtl8812AU) appears to have newer and older versions of the RealTek driver.
+It also has a version supporting dkms.
